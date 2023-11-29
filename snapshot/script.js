@@ -26,7 +26,7 @@ photos.forEach(function(imgs) {
     main_photos.innerHTML = '';
     main_photos.appendChild(imgs.cloneNode(true));
     console.log(imgs.src);
-    dl.innerHTML = `<a id="download-link" href="${imgs.src}" download="img.jpg">
+    dl.innerHTML = `<a id="download-link" href="${imgs.src}" download="SNAPSHOT.jpg">
     <i class="ri-download-line"></i></a>`;
   });
 });
