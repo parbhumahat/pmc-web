@@ -195,6 +195,7 @@
 .movie-poster {
   background-image: linear-gradient(rgba(0, 0, 0, 0.47),rgba(0, 0, 0, 0.419)),url('img/trial.jpg');
   width: 100%;
+  cursor: pointer;
   height: 88%;
   background-size: cover;
   background-position: center;
