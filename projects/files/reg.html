@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+
+<h2>Registration Form</h2>
+<form id="registrationForm" onsubmit="return validateForm()">
+    <label for="userId">User ID:</label>
+    <input type="text" id="userId" name="userId" required><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br>
+
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br>
+
+    <label for="country">Country:</label>
+    <input type="text" id="country" name="country" required><br>
+
+    <label for="zipCode">Zip Code:</label>
+    <input type="text" id="zipCode" name="zipCode" required><br>
+
+    <label>Gender:</label>
+    <input type="radio" id="male" name="gender" value="male" required>
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female" required>
+    <label for="female">Female</label>
+    <input type="radio" id="other" name="gender" value="other" required>
+    <label for="other">Other</label><br>
+
+    <label for="suggestions">Suggestions:</label>
+    <textarea id="suggestions" name="suggestions" rows="4"></textarea><br>
+
+    <input type="submit" value="Register">
+</form>
+
+<script>
+    function validateForm() {
+        var userId = document.getElementById("userId").value;
+        var password = document.getElementById("password").value;
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var country = document.getElementById("country").value;
+        var zipCode = document.getElementById("zipCode").value;
+        var gender = document.querySelector('input[name="gender"]:checked');
+        var suggestions = document.getElementById("suggestions").value;
+
+        var userIdPattern = /^\d{1,3}$/;
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        var zipCodePattern = /^\d{5}$/;
+
+        if (userId.trim() === "" || password.trim() === "" || name.trim() === "" || country.trim() === "" || zipCode.trim() === "" || !gender || suggestions.trim() === "") {
+            alert("All fields must be filled out.");
+            return false;
+        }
+
+        if (!userIdPattern.test(userId)) {
+            alert("User ID must be an integer not more than 3 digits.");
+            return false;
+        }
+
+        if (password.length < 5 || password.length > 8) {
+            alert("Password must be between 5 and 8 characters.");
+            return false;
+        }
+
+        if (!emailPattern.test(email)) {
+            alert("Email must be a valid email address.");
+            return false;
+        }
+
+        if (!zipCodePattern.test(zipCode)) {
+            alert("Zip Code must be a 5-digit number.");
+            return false;
+        }
+
+        // If all validations pass, the form is submitted
+        alert("Registration successful!");
+        return true;
+    }
+</script>
+
+</body>
+</html>
