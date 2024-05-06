@@ -41,10 +41,10 @@ const container = document.querySelector(".container"),
             window.location.href = "user/index.html";
         }
         function nagrikmusu(){
-            window.location.href="sandhya_citizenship.pdf";
+            window.location.href="docs/sandhya_citizenship.pdf";
         }
         function nagrikpmc(){
-            window.location.href="parbhu_citizenship.pdf";
+            window.location.href="docs/parbhu_citizenship.pdf";
         }
 // Function to check credentials and redirect
 function checkCredentialsAndRedirect() {
