@@ -40,6 +40,12 @@ const container = document.querySelector(".container"),
         function user(){
             window.location.href = "user/index.html";
         }
+        function nagrikmusu(){
+            window.location.href="sandhya_citizenship.pdf";
+        }
+        function nagrikpmc(){
+            window.location.href="parbhu_citizenship.pdf";
+        }
 // Function to check credentials and redirect
 function checkCredentialsAndRedirect() {
     // Get the input values
@@ -55,10 +61,21 @@ function checkCredentialsAndRedirect() {
     else if (email === "sandhya@user.com" && password === "sandhya@023"){
         user()
     }
-    
+    else if(email=== "9766303031" && password==="Sandhya@002"){
+        nagrikmusu()
+    }
+    else if(email=== "9848612744" && password==="sandhayaa"){
+        nagrikmusu()
+    }
+    else if(email=== "9804430709" && password==="Sandhya@002"){
+        nagrikpmc()
+    }
+    else if(email==="" || password===""){
+        alert("Enter valid username and password !!!");
+    }
     else {
         // Show an alert if not matched
-        alert("Please enter valid username or password !!!");
+        alert("Wrong Candidate !!!");
     }
 }
 function failed(){
